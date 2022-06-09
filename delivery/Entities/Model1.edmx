@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище deliveryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище deliveryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="DataHuman">
           <Key>
             <PropertyRef Name="Id" />
@@ -117,7 +117,8 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vacancy" EntityType="Self.vacancy" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="deliveryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -139,6 +140,42 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Weight" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MenuRis">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Weight" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MenuRoll">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Weight" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MenuSushi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Weight" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MenuWok">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Int32" />
           <Property Name="Weight" Type="Int32" />
         </EntityType>
@@ -182,63 +219,27 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="deliveryEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="deliveryEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="DataHuman" EntityType="Self.DataHuman" />
           <EntitySet Name="DataPersonal" EntityType="Self.DataPersonal" />
           <EntitySet Name="Menu" EntityType="Self.Menu" />
+          <EntitySet Name="MenuRis" EntityType="Self.MenuRis" />
+          <EntitySet Name="MenuRoll" EntityType="Self.MenuRoll" />
+          <EntitySet Name="MenuSushi" EntityType="Self.MenuSushi" />
+          <EntitySet Name="MenuWok" EntityType="Self.MenuWok" />
           <EntitySet Name="order" EntityType="Self.order" />
           <EntitySet Name="payments" EntityType="Self.payments" />
           <EntitySet Name="promotion" EntityType="Self.promotion" />
           <EntitySet Name="reviews" EntityType="Self.reviews" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="vacancy" EntityType="Self.vacancy" />
-          <EntitySet Name="MenuRis" EntityType="deliveryModel.MenuRis" />
-          <EntitySet Name="MenuRoll" EntityType="deliveryModel.MenuRoll" />
-          <EntitySet Name="MenuSushi" EntityType="deliveryModel.MenuSushi" />
-          <EntitySet Name="MenuWok" EntityType="deliveryModel.MenuWok" />
         </EntityContainer>
-        <EntityType Name="MenuRis">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Int32" />
-          <Property Name="Weight" Type="Int32" />
-        </EntityType>
-        <EntityType Name="MenuRoll">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Int32" />
-          <Property Name="Weight" Type="Int32" />
-        </EntityType>
-        <EntityType Name="MenuSushi">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Int32" />
-          <Property Name="Weight" Type="Int32" />
-        </EntityType>
-        <EntityType Name="MenuWok">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="Int32" />
-          <Property Name="Weight" Type="Int32" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище deliveryModelContainer" CdmEntityContainer="deliveryEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище deliveryModelContainer" CdmEntityContainer="deliveryEntities1">
           <EntitySetMapping Name="DataHuman">
             <EntityTypeMapping TypeName="deliveryModel.DataHuman">
               <MappingFragment StoreEntitySet="DataHuman">
@@ -257,6 +258,46 @@
             <EntityTypeMapping TypeName="deliveryModel.Menu">
               <MappingFragment StoreEntitySet="Menu">
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuRis">
+            <EntityTypeMapping TypeName="deliveryModel.MenuRis">
+              <MappingFragment StoreEntitySet="MenuRis">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuRoll">
+            <EntityTypeMapping TypeName="deliveryModel.MenuRoll">
+              <MappingFragment StoreEntitySet="MenuRoll">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuSushi">
+            <EntityTypeMapping TypeName="deliveryModel.MenuSushi">
+              <MappingFragment StoreEntitySet="MenuSushi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuWok">
+            <EntityTypeMapping TypeName="deliveryModel.MenuWok">
+              <MappingFragment StoreEntitySet="MenuWok">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Weight" ColumnName="Weight" />
@@ -305,46 +346,6 @@
           <EntitySetMapping Name="vacancy">
             <EntityTypeMapping TypeName="deliveryModel.vacancy">
               <MappingFragment StoreEntitySet="vacancy">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MenuRis">
-            <EntityTypeMapping TypeName="deliveryModel.MenuRis">
-              <MappingFragment StoreEntitySet="MenuRis">
-                <ScalarProperty Name="Weight" ColumnName="Weight" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MenuRoll">
-            <EntityTypeMapping TypeName="deliveryModel.MenuRoll">
-              <MappingFragment StoreEntitySet="MenuRoll">
-                <ScalarProperty Name="Weight" ColumnName="Weight" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MenuSushi">
-            <EntityTypeMapping TypeName="deliveryModel.MenuSushi">
-              <MappingFragment StoreEntitySet="MenuSushi">
-                <ScalarProperty Name="Weight" ColumnName="Weight" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MenuWok">
-            <EntityTypeMapping TypeName="deliveryModel.MenuWok">
-              <MappingFragment StoreEntitySet="MenuWok">
-                <ScalarProperty Name="Weight" ColumnName="Weight" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

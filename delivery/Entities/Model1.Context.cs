@@ -13,10 +13,10 @@ namespace delivery.Entities
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class deliveryEntities : DbContext
+    public partial class deliveryEntities1 : DbContext
     {
-        public deliveryEntities()
-            : base("name=deliveryEntities")
+        public deliveryEntities1()
+            : base("name=deliveryEntities1")
         {
         }
     
@@ -28,15 +28,15 @@ namespace delivery.Entities
         public virtual DbSet<DataHuman> DataHuman { get; set; }
         public virtual DbSet<DataPersonal> DataPersonal { get; set; }
         public virtual DbSet<Menu> Menu { get; set; }
+        public virtual DbSet<MenuRis> MenuRis { get; set; }
+        public virtual DbSet<MenuRoll> MenuRoll { get; set; }
+        public virtual DbSet<MenuSushi> MenuSushi { get; set; }
+        public virtual DbSet<MenuWok> MenuWok { get; set; }
         public virtual DbSet<order> order { get; set; }
         public virtual DbSet<payments> payments { get; set; }
         public virtual DbSet<promotion> promotion { get; set; }
         public virtual DbSet<reviews> reviews { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<vacancy> vacancy { get; set; }
-        public virtual DbSet<MenuRis> MenuRis { get; set; }
-        public virtual DbSet<MenuRoll> MenuRoll { get; set; }
-        public virtual DbSet<MenuSushi> MenuSushi { get; set; }
-        public virtual DbSet<MenuWok> MenuWok { get; set; }
     }
 }

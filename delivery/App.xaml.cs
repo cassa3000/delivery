@@ -13,6 +13,6 @@ namespace delivery
     /// </summary>
     public partial class App : Application
     {
-        public static Entities.deliveryEntities Context { get; } = new Entities.deliveryEntities() ;
+        public static Entities.deliveryEntities1 Context { get; } = new Entities.deliveryEntities1() ;
     }
 }
